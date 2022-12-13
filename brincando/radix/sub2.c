@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_radix.c                                      :+:      :+:    :+:   */
+/*   sub2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 18:17:20 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/13 09:06:20 by mdouglas         ###   ########.fr       */
+/*   Created: 2022/12/13 09:12:54 by mdouglas          #+#    #+#             */
+/*   Updated: 2022/12/13 09:15:52 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "radix.h"
 
-void    clear_screen(void)
+void    sub2(int ct[3], t_double_list *cur[2], char *msg, t_deque *stack[2])
 {
-    write(1, "\e[1;1H\e[2J", 11);
-}
-
-void    the_end(void)
-{
-    ft_putendl_fd("\033[0;31mKO\033[0m", 1);
-    exit(EXIT_SUCCESS);
-}
-
-void    ok(t_list *instructions)
-{
-    ft_putstr_fd("\033[1;32mOK with ", 1);
-    ft_putnbr_fd(ft_lstsize(instructions), 1);
-    ft_putendl_fd(" operations\033[0m", 1);
-    exit(EXIT_SUCCESS);
+    ct[0] = ft_max(stack[0]->size, stack[1]->size);
+    ct[2] = stack[0]->size + stack[1]->size - ct[0];
+    ft_putendl_fd(msg, 1);
+    while (ct[2]-- > 0)
+        ft_putendl_fd("", 1);
+    cur[0] = stack[0]->tail;
+    cur[1] = stack[1]->tail;
 }

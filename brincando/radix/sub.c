@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_radix.c                                      :+:      :+:    :+:   */
+/*   sub.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 18:17:20 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/13 09:06:20 by mdouglas         ###   ########.fr       */
+/*   Created: 2022/12/13 09:08:03 by mdouglas          #+#    #+#             */
+/*   Updated: 2022/12/13 09:27:36 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "radix.h"
 
-void    clear_screen(void)
+void    sub(t_list *cur_instruction, t_deque *stack[2], void *last_operation)
 {
-    write(1, "\e[1;1H\e[2J", 11);
-}
+    char                c;
+    t_double_list       *cur;
 
-void    the_end(void)
-{
-    ft_putendl_fd("\033[0;31mKO\033[0m", 1);
-    exit(EXIT_SUCCESS);
-}
-
-void    ok(t_list *instructions)
-{
-    ft_putstr_fd("\033[1;32mOK with ", 1);
-    ft_putnbr_fd(ft_lstsize(instructions), 1);
-    ft_putendl_fd(" operations\033[0m", 1);
-    exit(EXIT_SUCCESS);
+    while (cur_instruction)
+    {
+        read(0, &c, 1);
+        if (c == '\n')
+        {
+            clear_screen();
+            display_stack_radix(stack, last_operation);
+            assigned_operation(cur_instruction->content, stack);
+        }
+    }
 }

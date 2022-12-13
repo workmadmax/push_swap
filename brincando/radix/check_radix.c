@@ -6,11 +6,11 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 18:14:41 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/12 18:56:06 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/13 09:08:23 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tuto.h"
+#include "radix.h"
 
 void    check_radix(int *arr, int arr_size, t_list *instructions)
 {

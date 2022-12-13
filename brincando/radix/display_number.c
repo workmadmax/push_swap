@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_radix.c                                      :+:      :+:    :+:   */
+/*   display_number.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 18:17:20 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/13 09:06:20 by mdouglas         ###   ########.fr       */
+/*   Created: 2022/12/13 09:18:07 by mdouglas          #+#    #+#             */
+/*   Updated: 2022/12/13 09:26:34 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "radix.h"
 
-void    clear_screen(void)
+void    display_number_width11_base2(int num)
 {
-    write(1, "\e[1;1H\e[2J", 11);
-}
-
-void    the_end(void)
-{
-    ft_putendl_fd("\033[0;31mKO\033[0m", 1);
-    exit(EXIT_SUCCESS);
-}
-
-void    ok(t_list *instructions)
-{
-    ft_putstr_fd("\033[1;32mOK with ", 1);
-    ft_putnbr_fd(ft_lstsize(instructions), 1);
-    ft_putendl_fd(" operations\033[0m", 1);
-    exit(EXIT_SUCCESS);
+    int         idx;
+    extern int  g_size;
+    
+    idx = 0;
+    while (idx + g_size < 11)
+    {
+        ft_putchar_fd(' ', 1);
+        idx++;
+    }
+    idx = g_size - 1;
+    while (idx >= 0)
+    {
+        ft_putchar_fd(((num>>idx)&1) + '0', 1);
+        idx--;
+    }
 }

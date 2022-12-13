@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 18:11:44 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/12 18:59:36 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/13 09:30:53 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include "../ft/libft.h"
+# include "./radix/radix.h"
+# include "./operations/operation.h"
 
 typedef struct s_list
 {
@@ -50,16 +52,5 @@ typedef enum e_memory
     pop,
     clear
 }   t_memory;
-
-
-/* utils radix */
-
-void    clear_screen(void);
-void    the_end(void);
-void    ok(t_list *instructions);
-
-/* operations */
-
-void    init_stack(t_deque *stack, int *arr, int arr_size);
 
 #endif

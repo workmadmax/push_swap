@@ -6,11 +6,11 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 18:42:44 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/12 19:07:49 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/13 09:06:00 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tuto.h"
+#include "utils.h"
 
 void    error_exit(void)
 {
