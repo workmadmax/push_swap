@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 18:11:44 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/13 09:30:53 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:41:53 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 # include <unistd.h>
 # include <stdio.h>
+# include <stdlib.h>
 # include <fcntl.h>
 # include "../ft/libft.h"
 # include "./radix/radix.h"
@@ -35,7 +36,7 @@ typedef struct s_list
 typedef struct s_double_list
 {
     void                    *content;
-    struct s_double_list    *head;
+    struct s_double_list    *next;
     struct s_double_list    *last;
 }   t_double_list;
 

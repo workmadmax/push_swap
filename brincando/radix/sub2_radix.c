@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sub2.c                                             :+:      :+:    :+:   */
+/*   sub2_radix.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 09:12:54 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/13 09:15:52 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/13 11:06:24 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "radix.h"
 
-void    sub2(int ct[3], t_double_list *cur[2], char *msg, t_deque *stack[2])
+void    sub2_radix(int ct[3], t_double_list *cur[2], char *msg, t_deque *stack[2])
 {
     ct[0] = ft_max(stack[0]->size, stack[1]->size);
     ct[2] = stack[0]->size + stack[1]->size - ct[0];
