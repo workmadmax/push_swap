@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sub2_radix.c                                       :+:      :+:    :+:   */
+/*   get_bits.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 09:12:54 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/13 11:06:24 by mdouglas         ###   ########.fr       */
+/*   Created: 2022/12/21 18:02:31 by mdouglas          #+#    #+#             */
+/*   Updated: 2022/12/21 18:10:32 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "radix.h"
-
-void    sub2_radix(int ct[3], t_double_list *cur[2], char *msg, t_deque *stack[2])
+#include "push_swap.h"
+/**
+ * @brief Determina o número de bits necessário para
+ * representar um número inteiro.
+ * 
+ * @param nbr O número a ser verificado.
+ * @return int  O número de bits necessário para
+ * representar o número inteiro.
+ */
+int get_bits(int nbr)
 {
-    ct[0] = ft_max(stack[0]->size, stack[1]->size);
-    ct[2] = stack[0]->size + stack[1]->size - ct[0];
-    ft_putendl_fd(msg, 1);
-    while (ct[2]-- > 0)
-        ft_putendl_fd("", 1);
-    cur[0] = stack[0]->tail;
-    cur[1] = stack[1]->tail;
+    int num_bits;
+
+    num_bits = 0;
+    while (nbr >> num_bits)
+        num_bits++;
+    return (num_bits);
 }

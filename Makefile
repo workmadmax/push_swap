@@ -6,7 +6,16 @@
 #    By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 10:19:33 by mdouglas          #+#    #+#              #
-#    Updated: 2022/12/12 10:19:34 by mdouglas         ###   ########.fr        #
+#    Updated: 2022/12/15 12:06:36 by mdouglas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME								=	push_swap
+
+CC									=	cc
+RM									=	rm -rf
+
+
+OBJS								=	$(SRCS:%.c=%.o)
+
+SRCS								=	
