@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:24:40 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/22 14:05:55 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/22 17:35:05 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  * @return void* Ponteiro para o início da lista lincada
  * com o novo node adicionado.
  */
-void    *add_node_tail(t_chain *list, int data, int index)
+t_chain *add_node_tail(t_chain *list, int data, int index)
 {
     t_node  *new_node;
 

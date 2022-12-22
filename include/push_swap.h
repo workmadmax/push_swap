@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 17:59:24 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/22 13:47:53 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/22 18:27:06 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_chain
 
 int         get_bits(int nbr);
 void        ft_radix(t_chain *stack_a, t_chain *stack_b);
+void        sort_three(t_chain *list);
 
 t_chain     *set_index(t_chain *stack_a);
 
@@ -51,5 +52,21 @@ t_chain     *swap(char *character, t_chain *stack);
 void    ult_rev_rotate(t_chain *stack_one, t_chain *stack_two);
 void    ult_rotate(t_chain *stack_one, t_chain *stack_two);
 void    ult_swap(t_chain *stack_one, t_chain *stack_two);
+
+/* manage list */
+
+void        free_list(t_chain **list);
+size_t      get_lower_index(t_chain *stack);
+t_chain     *create_new_list(t_chain *list);
+t_chain     *add_node_head(t_chain *list, int data, int index);
+t_chain     *add_node_tail(t_chain *list, int data, int index);
+
+/* errors */
+
+void    error_msg(char *mensage, t_chain *list);
+void    cleanup_handle_error(char **buffer, t_chain *list);
+void    check_duplicate_number(t_chain *list);
+void    check_arguments(int argc, char **argv);
+void    check_digits_presence(int argc, char **argv);
 
 #endif
