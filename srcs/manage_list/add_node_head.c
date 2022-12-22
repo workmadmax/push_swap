@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_node_tail.c                                    :+:      :+:    :+:   */
+/*   add_node_head.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 19:24:40 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/22 14:05:55 by mdouglas         ###   ########.fr       */
+/*   Created: 2022/12/22 13:49:56 by mdouglas          #+#    #+#             */
+/*   Updated: 2022/12/22 13:59:23 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 /**
- * @brief Adiciona um node com um determinado valor
- * e índice ao final de uma lista lincada.
+ * @brief Adiciona um novo node no início de uma lista lincada.
  * 
- * @param list Ponteiro para o início da lista lincada.
- * @param data Dado a ser armazenado no novo node.
- * @param index Índice a  ser armazenado no novo node.
- * @return void* Ponteiro para o início da lista lincada
- * com o novo node adicionado.
+ * @param list Ponteiro para a estrutura de dados "t_chain" que
+ * representa a lista lincada.
+ * @param data Valor inteiro a ser armazenado no novo node.
+ * @param index Índice inteiro a ser armazenado no novo node.
+ * @return t_chain* Ponteiro para a estrutura de dados que
+ * representa a lista lincada.
  */
-void    *add_node_tail(t_chain *list, int data, int index)
+t_chain *add_node_head(t_chain *list, int data, int index)
 {
     t_node  *new_node;
 
     new_node = malloc(sizeof(t_chain));
-    if (!new_node)
+    if (!new_node || !list)
         error_msg("Error in allocation\n", list);
-    new_node->next = NULL;
-    new_node->index = index;
+    new_node->prev = NULL;
     new_node->data = data;
-    if (list->tail != NULL)
+    new_node->index = index;
+    if (list->head != NULL)
     {
-        list->tail->next = new_node;
-        new_node->prev = list->tail;
-        list->tail = new_node;
+        list->head->prev = new_node;
+        new_node = list->head;
+        list->head = new_node;
     }
     else
     {
         list->tail = new_node;
         list->head = new_node;
-        new_node->prev = NULL;
+        new_node = NULL;
     }
     list->size++;
     return (list);
