@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:11:02 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/22 13:46:30 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/22 20:09:37 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
  */
 void    ult_rev_rotate(t_chain *stack_one, t_chain *stack_two)
 {
-    stack_one = rev_rotation(" ", stack_one);
-    stack_two = rev_rotation(" ", stack_two);
+    stack_one = rev_rotate(" ", stack_one);
+    stack_two = rev_rotate(" ", stack_two);
     write(1, "rrr\n", 4);
 }
 /**

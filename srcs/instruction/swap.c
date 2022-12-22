@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:40:01 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/21 19:50:17 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/22 20:04:52 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static void ft_swap(int *element1, int *element2)
     int buffer;
 
     buffer = *element2;
-    element2 = element1;
-    element1 = buffer;
+    *element2 = *element1;
+    *element1 = buffer;
 }
 /**
  * @brief Troca os dois primeiros nodes de uma lista encadeada.

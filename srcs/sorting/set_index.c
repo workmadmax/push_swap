@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:15:14 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/21 18:39:06 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/22 20:06:56 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_chain *set_index(t_chain *stack_a)
                 min_idx = temp;
             temp = temp->next;
         }
-        min_idx = idx;
+        min_idx->index = idx;
         idx++;
     }
     return (stack_a);

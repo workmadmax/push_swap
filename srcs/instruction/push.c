@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:11:10 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/21 19:24:16 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/22 20:04:02 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_chain *push(char *character, t_chain *source, t_chain *dest)
     write(1, character, ft_strlen(character));
     if (source->head == NULL)
         return (dest);
-    dest = add_node_tail(dest, source->head, source->head->index);
+    dest = add_node_tail(dest, source->head->data, source->head->index);
     if (source->size == 1)
     {
         free(source->head);

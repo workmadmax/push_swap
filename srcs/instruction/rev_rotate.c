@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:26:20 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/21 19:32:26 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/22 20:08:11 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @return t_chain* A lista encadeada "pilha" atualizada com os nós
  * rotacionados.
  */
-t_chain *rev_rotation(char *character, t_chain *stack)
+t_chain *rev_rotate(char *character, t_chain *stack)
 {
     t_node  *temp;
 
