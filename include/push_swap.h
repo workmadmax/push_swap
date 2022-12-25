@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 17:59:24 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/22 20:08:22 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/25 16:16:43 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,15 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 # include "../ft/libft.h"
 
+# ifndef INT_MIN
+#	define INT_MIN -2147483648
+# endif
+# ifndef INT_MAX
+#	define INT_MAX 2147483647
+#endif
 
 typedef struct s_node
 {

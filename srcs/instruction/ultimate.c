@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:11:02 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/22 20:09:37 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/25 14:53:46 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void    ult_rotate(t_chain *stack_one, t_chain *stack_two)
 {
     stack_one = rotate(" ", stack_one);
     stack_two = rotate(" ", stack_two);
-    write(1, "ss\n", 3);
+    write(1, "rr\n", 3);
 }
 /**
  * @brief Realiza uma troca nas duas pilhas fornecidas.

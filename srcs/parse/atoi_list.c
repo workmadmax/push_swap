@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:08:53 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/22 19:21:08 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/25 16:13:42 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int ft_atoi_list(char **str, t_chain *list, int cnt)
     idx = 0;
     num[0] = 0;
     min = 1;
-    while (str[cnt][idx] == ' ' || str[cnt][idx] == '\n'
-        || str[cnt][idx] == '\t' || str[cnt][idx] == '\v'
-        || str[cnt][idx] == '\f' || str[cnt][idx] == '\r')
+    while (str[cnt][idx] == ' ' || str[cnt][idx] == '\n' ||
+    str[cnt][idx] == '\t' || str[cnt][idx] == '\v' ||
+    str[cnt][idx] == '\f' || str[cnt][idx] == '\r')
         idx++;
     if (str[cnt][idx] == '+' || str[cnt][idx] == '-')
         if (str[cnt][idx++] == '-')

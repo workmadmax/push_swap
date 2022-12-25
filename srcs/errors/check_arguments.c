@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:00:54 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/22 18:22:54 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/25 15:41:55 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void    check_arguments(int argc, char **argv)
 
     index = 1;
     if (argc == 1)
-        error_msg("Error: no arguments provided\n", NULL);
+        error_msg("Error:\n", NULL);
     while (index < argc)
     {
         count = 0;
         if (!argv[index][count])
-            error_msg("Error: no arguments provided\n", NULL);
+            error_msg("Error:\n", NULL);
         while (argv[index][count])
         {
             if (argv[index][count] == '-' || argv[index][count] == '+')

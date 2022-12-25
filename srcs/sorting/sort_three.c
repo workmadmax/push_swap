@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort3.c                                            :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:02:54 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/21 19:09:59 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/25 15:04:21 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void    sort_three(t_chain *list)
 
     set_index(list);
     temp = list->head;
-    
+    if (check_sorted(list))
+        return ;
     while (temp->next)
     {
         if (temp->index == 2 && temp->next->index == 0)

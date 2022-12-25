@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:24:40 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/22 17:35:05 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/25 14:55:22 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ t_chain *add_node_tail(t_chain *list, int data, int index)
 {
     t_node  *new_node;
 
-    new_node = malloc(sizeof(t_chain));
-    if (!new_node)
+    new_node = malloc(sizeof(t_node));
+    if (!new_node || !list)
         error_msg("Error in allocation\n", list);
     new_node->next = NULL;
     new_node->index = index;

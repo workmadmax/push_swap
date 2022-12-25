@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 14:14:40 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/22 14:21:12 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/25 14:37:12 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_chain *create_new_list(t_chain *list)
     
     new_list = malloc(sizeof(t_chain));
     if (!new_list)
-        error_msg("Error in allocation\n", list);
+        error_msg("Error in allocation\n", NULL);
     new_list->size = 0;
     new_list->tail = NULL;
     new_list->head = NULL;

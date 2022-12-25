@@ -4,6 +4,6 @@
 
 
 
-teste*
-ft_printf/
-objects/
+test*
+objs
+ft_printf
