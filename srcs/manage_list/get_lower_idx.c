@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 14:29:21 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/25 14:40:59 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/26 11:39:21 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  */
 size_t  get_lower_index(t_chain *stack)
 {
-    int         first_node;
+    int         lower_idx;
     size_t      index;
     size_t      count;
     t_node      *helper;
@@ -29,13 +29,13 @@ size_t  get_lower_index(t_chain *stack)
     helper = stack->head;
     index = 0;
     count = 0;
-    first_node = helper->data;
+    lower_idx = helper->data;
     while (helper)
     {
-        if (first_node > helper->data)
+        if (lower_idx > helper->data)
         {
             count = 1;
-            first_node = helper->data;
+            lower_idx = helper->data;
         }
         index++;
         helper = helper->next;

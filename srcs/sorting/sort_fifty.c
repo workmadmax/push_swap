@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:41:40 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/22 20:08:36 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/26 11:51:57 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
  */
 void    sort_fifty(t_chain *stack_a, t_chain *stack_b)
 {
-    size_t  min_index;
+    size_t  low_index;
     
     while (stack_a->size > 3)
     {
-        min_index = get_lower_index(stack_a);
-        if (min_index > stack_a->size / 2)
+        low_index = get_lower_index(stack_a);
+        if (low_index > stack_a->size / 2)
             while (get_lower_index(stack_a) != 0)
                 rev_rotate("rra\n", stack_a);
         else

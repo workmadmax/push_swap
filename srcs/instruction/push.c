@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:11:10 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/25 14:30:03 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/26 11:41:48 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,27 @@
  * @return t_chain* A lista encadeada de "destino" atualizada
  * com o novo node.
  */
-t_chain *push(char *character, t_chain *source, t_chain *dest)
+t_chain	*push(char *character, t_chain *source, t_chain *dest)
 {
-    t_node  *temp;
-    
-    write(1, character, ft_strlen(character));
-    if (source->head == NULL)
-        return (dest);
-    dest = add_node_head(dest, source->head->data, source->head->index);
-    if (source->size == 1)
-    {
-        free(source->head);
-        source->head = NULL;
-        source->tail = NULL;
-    }
-    else
-    {
-        temp = source->head;
-        source->head = source->head->next;
-        source->head->prev = NULL;
-        free(temp);
-    }
-    source->size--;
-    return (dest);
+	t_node	*tmp;
+
+	write(1, character, ft_strlen(character));
+	if (source->head == NULL)
+		return (dest);
+	dest = add_node_head(dest, source->head->data, source->head->index);
+	if (source->size == 1)
+	{
+		free(source->head);
+		source->head = NULL;
+		source->tail = NULL;
+	}
+	else
+	{
+		tmp = source->head;
+		source->head = source->head->next;
+		source->head->prev = NULL;
+		free(tmp);
+	}
+	source->size--;
+	return (dest);
 }

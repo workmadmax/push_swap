@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 13:49:56 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/25 15:49:58 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/26 11:36:31 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,28 @@
  * @return t_chain* Ponteiro para a estrutura de dados que
  * representa a lista lincada.
  */
-t_chain *add_node_head(t_chain *list, int data, int index)
+t_chain	*add_node_head(t_chain *list, int data, int index)
 {
-    t_node  *new_node;
+	t_node	*new_node;
 
-    new_node = malloc(sizeof(t_node));
-    if (!new_node || !list)
-        error_msg("Error in allocation\n", list);
-    new_node->prev = NULL;
-    new_node->data = data;
-    new_node->index = index;
-    if (list->head != NULL)
-    {
-        list->head->prev = new_node;
-        new_node->next = list->head;
-        list->head = new_node;
-    }
-    else
-    {
-        list->tail = new_node;
-        list->head = new_node;
-        new_node = NULL;
-    }
-    list->size++;
-    return (list);
+	new_node = malloc(sizeof(t_node));
+	if (!new_node || !list)
+		error_msg("Error\n", list);
+	new_node->prev = NULL;
+	new_node->data = data;
+	new_node->index = index;
+	if (list->head != NULL)
+	{
+		list->head->prev = new_node;
+		new_node->next = list->head;
+		list->head = new_node;
+	}
+	else
+	{
+		list->tail = new_node;
+		list->head = new_node;
+		new_node->next = NULL;
+	}
+	list->size++;
+	return (list);
 }
