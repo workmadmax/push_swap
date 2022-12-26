@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:00:54 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/26 12:04:19 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/26 16:14:44 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	check_arguments(int num_args, char **args)
 	int	count;
 
 	index = 1;
-	if (num_args == 1)
-		error_msg("Error\n", NULL);
 	while (index < num_args)
 	{
 		count = 0;
