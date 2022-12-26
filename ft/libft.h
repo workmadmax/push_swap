@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 21:29:34 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/26 12:35:33 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/26 13:31:52 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h>
+
+# ifndef INT_MIN
+#  define INT_MIN -2147483648
+# endif
+# ifndef INT_MAX
+#  define INT_MAX 2147483647
+#endif
 
 /**
  * @brief A list of nodes with content.

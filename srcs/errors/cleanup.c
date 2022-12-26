@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 17:41:30 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/22 17:50:06 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/26 14:17:57 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void    cleanup_handle_error(char **buffer, t_chain *list)
     while (buffer[index])
         free(buffer[index++]);
     free(buffer);
-    error_msg("Error clearing memory\n", list);
+    error_msg("Error\n", list);
 }

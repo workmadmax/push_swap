@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:08:53 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/26 12:38:23 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/26 14:15:12 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,31 @@
  * @param cnt Indice da string a ser convertida.
  * @return int O número inteiro resultante da conversão.
  */
-int ft_atoi_list(char **str, t_chain *list, int cnt)
+int	ft_atoi_list(char **str, t_chain *list, int count)
 {
-	int			idx;
+	int			index;
 	long int	num[2];
 	int			min;
 
-	idx = 0;
+	index = 0;
 	num[0] = 0;
 	min = 1;
-	while (str[cnt][idx] == ' ' || str[cnt][idx] == '\n' || str[cnt][idx] == '\t'
-		|| str[cnt][idx] == '\v' || str[cnt][idx] == '\f' || str[cnt][idx] == '\r')
-		idx++;
-	if (str[cnt][idx] == '+' || str[cnt][idx] == '-')
-		if (str[cnt][idx++] == '-')
+	while (str[count][index] == ' ' || str[count][index] == '\n' || str[count][index] == '\t'
+		|| str[count][index] == '\v' || str[count][index] == '\f' || str[count][index] == '\r')
+		index++;
+	if (str[count][index] == '+' || str[count][index] == '-')
+		if (str[count][index++] == '-')
 			min *= -1;
-	while (str[cnt][idx] >= 48 && str[cnt][idx] <= 57)
+	while (str[count][index] >= 48 && str[count][index] <= 57)
 	{
-		num[1] = num[0] * 10 + (str[cnt][idx] - 48);
+		num[1] = num[0] * 10 + (str[count][index] - 48);
 		if (num[1] < num[0])
 			cleanup_handle_error(str, list);
 		num[0] = num[1];
-		idx++;
+		index++;
 	}
 	num[0] *= min;
-	if (num[0] < LONG_MIN || num[0] > LONG_MAX)
+	if (num[0] < INT_MIN || num[0] > INT_MAX)
 		cleanup_handle_error(str, list);
 	return (num[0]);
 }

@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 17:59:24 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/26 12:35:59 by mdouglas         ###   ########.fr       */
+/*   Updated: 2022/12/26 14:05:36 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@
 # include <stdlib.h>
 # include "../ft/libft.h"
 
-# ifndef INT_MIN
-#  define INT_MIN -2147483648
-# endif
-# ifndef INT_MAX
-#  define INT_MAX 2147483647
-#endif
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
 
 typedef struct s_node
 {
@@ -74,11 +70,11 @@ void        error_msg(char *mensage, t_chain *list);
 void        cleanup_handle_error(char **buffer, t_chain *list);
 void        check_duplicate_number(t_chain *list);
 void	    check_arguments(int num_args, char **args);
-void        check_digits_presence(int argc, char **argv);
+void        check_digits_presence(int num_args, char **args);
 
 /* parse */
 
-int         ft_atoi_list(char **str, t_chain *list, int cnt);
+int         ft_atoi_list(char **str, t_chain *lst, int j);
 int         check_sorted(t_chain *stack_a);
 
 t_chain     *parse_arguments(t_chain *stack_a, char **argv);
