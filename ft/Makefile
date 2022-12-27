@@ -1,6 +1,7 @@
 NAME						=	libft.a
 CC							=	gcc -Wall -Wextra -Werror
 LIB 						=	ar rcs
+SAFE_MKDIR					=	mkdir -p
 SRCS 						= 	ft_isalpha.c \
 								ft_isdigit.c \
 								ft_isalnum.c \
@@ -47,18 +48,19 @@ SRCS 						= 	ft_isalpha.c \
 								ft_lstlast.c \
 								ft_lstsize.c \
 								
-OBJS 						=	$(SRCS:.c=.o)
+OBJS 						=	$(patsubst %.c, objects/%.o, $(SRCS))
+OBJS_DIR					=	objects
 
-.c.o:
-								$(CC) -C $< -o $(<:.c=.o)
+$(OBJS_DIR)/%.o:			%.c
+								$(CC) -c $< -o $@ -I./include
 
 all:						$(NAME)
 
-$(NAME):					$(OBJS)
+$(NAME):					$(OBJS_DIR) $(OBJS)
 							$(LIB) $(NAME) $(OBJS)
 
-$(OBJS):					$(SRCS)
-							$(CC) -c $(SRCS)
+$(OBJS_DIR):
+							$(SAFE_MKDIR) $@
 
 re:							fclean all
 
