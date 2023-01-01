@@ -6,7 +6,7 @@
 /*   By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:00:54 by mdouglas          #+#    #+#             */
-/*   Updated: 2022/12/26 16:14:44 by mdouglas         ###   ########.fr       */
+/*   Updated: 2023/01/01 00:26:06 by mdouglas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
  * @param argv Array de strings com os argumentos passados
  * para o programa.
  */
-void	check_arguments(int num_args, char **args)
+void	
+check_arguments(int num_args, char **args)
 {
 	int	index;
 	int	count;
@@ -43,5 +44,4 @@ void	check_arguments(int num_args, char **args)
 		}
 		index++;
 	}
-	check_digits_presence(num_args, args);
 }

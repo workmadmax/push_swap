@@ -6,7 +6,7 @@
 #    By: mdouglas <mdouglas@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 10:19:33 by mdouglas          #+#    #+#              #
-#    Updated: 2022/12/22 20:05:36 by mdouglas         ###   ########.fr        #
+#    Updated: 2023/01/01 00:26:31 by mdouglas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS										=	-Wall -Werror -Wextra -g3
 RM											=	rm -rf
 
 
-SRCS										=	check_arguments.c check_digits.c \
+SRCS										=	check_arguments.c \
 													check_duplicate.c cleanup.c \
 													error_msg.c \
 													push.c rev_rotate.c rotate.c \
